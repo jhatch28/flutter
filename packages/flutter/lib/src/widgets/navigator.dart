@@ -587,7 +587,10 @@ class NavigatorObserver {
 /// on-boarding flow, or an alert dialog. Therefore, there must exist a "root"
 /// [Navigator] that sits above the tab navigation. As a result, each of the
 /// tab's [Navigator]s are actually nested [Navigator]s sitting below a single
-/// root [Navigator].
+/// root [Navigator]. One of the benefits for using nested [Navigator]s in 
+/// situations like these is that child widgets of the nested [Navigator] can 
+/// take advantage of things like [BuildContext.inheritFromWidgetOfExactType] to
+/// access [InheritedWidget]s added to the tree below the root [Navigator]
 ///
 /// The nested [Navigator]s for tabbed navigation sit in [WidgetApp] and
 /// [CupertinoTabView], so you don't need to worry about nested [Navigator]s
